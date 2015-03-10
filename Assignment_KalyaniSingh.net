@@ -1,0 +1,229 @@
+net
+{
+	rcenginegenerator1317510038576835557L = "edu.ucla.belief.inference.RCSettings@6644e752";
+}
+
+node Clear_Access_Rights
+{
+	states = ("no" "yes" );
+	position = (426 -335);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Clear_Access_Rights";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Management_Type
+{
+	states = ("govt" "co mgt" "trad" );
+	position = (517 -28);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Management_Type";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Control_Surveillance
+{
+	states = ("low" "med high" );
+	position = (636 -337);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Control_Surveillance";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node CPUE_Change
+{
+	states = ("declining" "static rising" );
+	position = (764 -503);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "CPUE_Change";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Fisher_Density
+{
+	states = ("low" "high" );
+	position = (769 -338);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Fisher_Density";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Gears
+{
+	states = ("low" "high" );
+	position = (970 -199);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Gears";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Fisher_Representation
+{
+	states = ("low" "med high" );
+	position = (558 -208);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Fisher_Representation";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Democ_Elected
+{
+	states = ("yes" "no" );
+	position = (309 -115);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Democ_Elected";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Conflict_Resolution
+{
+	states = ("no" "yes" );
+	position = (782 -208);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Conflict_Resolution";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Compliance
+{
+	states = ("low" "med high" );
+	position = (550 -500);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Compliance";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Respectability
+{
+	states = ("low med" "high" );
+	position = (299 -206);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Respectability";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Stability
+{
+	states = ("stable" "unstable" );
+	position = (163 -30);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Stability";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Equity
+{
+	states = ("low" "high" );
+	position = (1012 -490);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Equity";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+node Poaching
+{
+	states = ("low" "med high" );
+	position = (323 -497);
+	diagnosistype = "AUXILIARY";
+	ismapvariable = "false";
+	label = "Poaching";
+	DSLxEXTRA_DEFINITIONxDIAGNOSIS_TYPE = "AUXILIARY";
+	excludepolicy = "include whole CPT";
+}
+potential ( Clear_Access_Rights | Fisher_Representation )
+{
+	data = ((	0.171	0.829	)
+		(	0.31	0.69	));
+}
+potential ( Management_Type | )
+{
+	data = (	0.12	0.55	0.33	);
+}
+potential ( Control_Surveillance | Fisher_Representation )
+{
+	data = ((	0.401	0.599	)
+		(	0.47	0.53	));
+}
+potential ( CPUE_Change | Control_Surveillance Fisher_Density )
+{
+	data = (((	0.517	0.483	)
+		(	0.34	0.66	))
+		((	0.123	0.877	)
+		(	0.45	0.55	)));
+}
+potential ( Fisher_Density | )
+{
+	data = (	0.45	0.55	);
+}
+potential ( Gears | Management_Type )
+{
+	data = ((	0.171	0.829	)
+		(	0.25	0.75	)
+		(	0.51	0.49	));
+}
+potential ( Fisher_Representation | Management_Type Democ_Elected )
+{
+	data = (((	0.27	0.73	)
+		(	0.09	0.91	))
+		((	0.511	0.489	)
+		(	0.42	0.58	))
+		((	0.14	0.86	)
+		(	0.21	0.79	)));
+}
+potential ( Democ_Elected | Management_Type )
+{
+	data = ((	0.48	0.52	)
+		(	0.19	0.81	)
+		(	0.71	0.29	));
+}
+potential ( Conflict_Resolution | Management_Type )
+{
+	data = ((	0.377	0.623	)
+		(	0.21	0.79	)
+		(	0.413	0.587	));
+}
+potential ( Compliance | Clear_Access_Rights Control_Surveillance )
+{
+	data = (((	0.5	0.5	)
+		(	0.75	0.25	))
+		((	0.05	0.95	)
+		(	0.31	0.69	)));
+}
+potential ( Respectability | Fisher_Representation )
+{
+	data = ((	0.391	0.609	)
+		(	0.568	0.432	));
+}
+potential ( Stability | Management_Type )
+{
+	data = ((	0.34	0.66	)
+		(	0.241	0.759	)
+		(	0.16	0.84	));
+}
+potential ( Equity | Conflict_Resolution Gears )
+{
+	data = (((	0.272	0.728	)
+		(	0.156	0.844	))
+		((	0.561	0.439	)
+		(	0.656	0.344	)));
+}
+potential ( Poaching | Compliance Control_Surveillance )
+{
+	data = (((	0.05	0.95	)
+		(	0.52	0.48	))
+		((	0.21	0.79	)
+		(	0.16	0.84	)));
+}
